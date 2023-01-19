@@ -1,18 +1,27 @@
-var x = 0;
+
+var characterCount = 0;
 var wordArray = [];
 var guessword = "chess";
 var holdArray = [];
+
+
+// TODO: only allow the event listener once the page has loaded.
+// TODO: add a regex for only alpha characters
+
+// *Listens for a key press
 document.addEventListener("keydown", (e) =>{
-	x=x+1;
-	if(x<6){
-		console.log(e.key + "- " + x);
+	// *If the count is less than 6
+	if(characterCount<6){
+		// *Log the keycode and index of character
+		console.log(e.key + "- " + characterCount);
 		holdArray.push(e.key);
+		characterCount=+1;
 	}
 	else if(x=6){
-		console.log(holdArray);
 		if(holdArray.join("") == guessword){
 			console.log("correct");
 		}
+		console.log(holdArray);
 		wordArray.push(holdArray);
 		holdArray = [];
 		x=0;
