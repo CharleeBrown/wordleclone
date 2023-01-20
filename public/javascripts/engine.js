@@ -16,7 +16,6 @@ document.addEventListener("keydown", (e) =>{
 		if(characterCount<6){
 		// *Log the keycode and index of character
 		console.log(e.key + "- " + characterCount);
-	
 		inputs.value += e.key;
 		holdArray.push(e.key);
 		characterCount+=1;
