@@ -11,16 +11,16 @@ var charRegex = new RegExp(/^[A-Z]+$/i);
 inputs.value="";
 // *Listens for a key press
 document.addEventListener("keydown", (e) =>{
-	// *If the count is less than 6
+	// *If the count is < 5
 	if(e.key.match(/^[a-zA-Z]$/)){
-		if(characterCount<=5){
+		if(characterCount<5){
 		// *Log the keycode and index of character
 		console.log(e.key + "- " + characterCount);
 		inputs.value += e.key;
 		holdArray.push(e.key);
 		characterCount+=1;
 	}
-	else if(characterCount=6){
+	else if(characterCount=5){
 		if(holdArray.join("") == guessword){
 			alert("correct");
 		}
@@ -31,7 +31,7 @@ document.addEventListener("keydown", (e) =>{
 		characterCount=0;
 	}
 }
-else if(e.key =="Backspace" && characterCount < 6){
+else if(e.key =="Backspace" && characterCount < 5){
 	characterCount-=1;
 	inputs.value = inputs.value.substring(0, inputs.value.length - 1);
 	holdArray.pop();
