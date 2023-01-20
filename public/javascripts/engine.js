@@ -23,12 +23,18 @@ document.addEventListener("keydown", (e) =>{
 	else if(characterCount=5){
 		if(holdArray.join("") == guessword){
 			alert("correct");
+			window.localStorage.setItem("solved", "true");
 		}
 		inputs.value = inputs.value + "\n";
 		console.log(holdArray);
 		wordArray.push(holdArray);
 		holdArray = [];
 		characterCount=0;
+	}
+	else if(wordArray.length === 5){
+		window.localStorage.setItem("solved", "false");
+		alert("The word was " + guessword);
+		window.localStorage.setItem("tries", wordArray);
 	}
 }
 else if(e.key =="Backspace" && characterCount < 5){
