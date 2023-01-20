@@ -12,7 +12,7 @@ inputs.value="";
 // *Listens for a key press
 document.addEventListener("keydown", (e) =>{
 	// *If the count is < 5
-	if(e.key.match(/^[a-zA-Z]$/)){
+	if(e.key.match(/^[a-zA-Z]$/) || e.key >= 48 && e.key <=90){
 		if(characterCount<5){
 		// *Log the keycode and index of character
 		console.log(e.key + "- " + characterCount);

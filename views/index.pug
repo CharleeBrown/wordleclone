@@ -1,7 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  textarea(id="words" cols="10" row="3")
+  div(class="container")
+    div(class="row" style="text-align:center;")
+      h1|Wordle Clone (Clonle?)
+    div(class="col", style="text-align:center;")
+      textarea(id="words" cols="10" row="10")
   script(src="./javascripts/engine.js")
