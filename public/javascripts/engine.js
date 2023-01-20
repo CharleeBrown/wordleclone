@@ -11,8 +11,15 @@ var charRegex = new RegExp(/^[A-Z]+$/i);
 inputs.value="";
 // *Listens for a key press
 document.addEventListener("keydown", (e) =>{
+// 	if(e.key =="Enter"){
+// 		inputs.value += "enter";
+// 	}
+// 	else if(e.key =="Backspace" && inputs.length!=0){
+// 	inputs.value = inputs.value.substring(0, inputs.value.length-5);
+// 	}
+// });
 	// *If the count is < 5
-	if(e.key.match(/^[a-zA-Z]$/) || e.key >= 48 && e.key <=90){
+	if(e.key.match(/^[a-zA-Z]$/)){
 		if(characterCount<5){
 		// *Log the keycode and index of character
 		console.log(e.key + "- " + characterCount);
@@ -20,7 +27,7 @@ document.addEventListener("keydown", (e) =>{
 		holdArray.push(e.key);
 		characterCount+=1;
 	}
-	else if(characterCount=5){
+	else if(characterCount=5 || e.key == "Enter"){
 		inputs.value = inputs.value + "\n";
 		console.log(holdArray.join(""));
 		wordArray.push(holdArray);
