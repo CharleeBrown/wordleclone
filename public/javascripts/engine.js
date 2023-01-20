@@ -23,6 +23,7 @@ document.addEventListener("keydown", (e) =>{
 	else if(characterCount=5){
 		if(holdArray.join("") == guessword){
 			alert("correct");
+			// * This works, but the wordArray if statement isn't reached.
 			window.localStorage.setItem("solved", "true");
 		}
 		inputs.value = inputs.value + "\n";
@@ -31,7 +32,7 @@ document.addEventListener("keydown", (e) =>{
 		holdArray = [];
 		characterCount=0;
 	}
-	else if(wordArray.length === 5){
+	else if(wordArray.length = 5){
 		window.localStorage.setItem("solved", "false");
 		alert("The word was " + guessword);
 		window.localStorage.setItem("tries", wordArray);
